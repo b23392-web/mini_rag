@@ -1,0 +1,33 @@
+------Trade-offs I made
+
+I avoided paid services → saved money, spent time
+
+I used local models → more control, more setup pain
+
+I kept things simple → easier to start, harder to grow
+
+None of these are wrong. Each choice just moves the difficulty somewhere else.
+
+-----Limits of the current setup
+
+Data disappears when the app stops
+
+Only one piece of text is handled properly
+
+Frontend is fragile
+
+Not suitable for many users or long documents
+
+This is normal at this stage.
+
+------What I can realistically do next
+
+Freeze features and stabilize one working flow
+
+Make document upload work reliably
+
+Store data permanently
+
+Clean the UI slowly
+
+Add checks so errors don’t fail silently

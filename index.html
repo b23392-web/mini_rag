@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mini RAG</title>
+</head>
+<body>
+
+<h2>Ask a Question</h2>
+<input id="q" placeholder="Type question" />
+<button onclick="send()">Ask</button>
+
+<pre id="out"></pre>
+
+<script>
+async function send() {
+  const q = document.getElementById("q").value;
+  const out = document.getElementById("out");
+
+  out.textContent = "⏳ Thinking...";
+
+  try {
+    const res = await fetch("/ask", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question: q })
+    });
+
+    const data = await res.json();
+    out.textContent = data.answer;
+  } catch (e) {
+    out.textContent = "❌ Error calling backend";
+    console.error(e);
+  }
+}
+</script>
+
+</body>
+</html>
